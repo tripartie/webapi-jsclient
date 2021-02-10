@@ -1,6 +1,6 @@
 {
   "name": "@tripartie/webapi-jsclient",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Tripartie Web API allows you to easily create Transaction templates",
   "license": "MIT",
   "author": "Tripartie <support@tripartie.com>",
