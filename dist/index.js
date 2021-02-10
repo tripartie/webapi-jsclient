@@ -27,6 +27,12 @@ Object.defineProperty(exports, "ModelUser", {
     return _ModelUser["default"];
   }
 });
+Object.defineProperty(exports, "ModelWebhook", {
+  enumerable: true,
+  get: function get() {
+    return _ModelWebhook["default"];
+  }
+});
 Object.defineProperty(exports, "RequestCreateTransactionTemplate", {
   enumerable: true,
   get: function get() {
@@ -51,6 +57,12 @@ Object.defineProperty(exports, "UsersApi", {
     return _UsersApi["default"];
   }
 });
+Object.defineProperty(exports, "WebhooksApi", {
+  enumerable: true,
+  get: function get() {
+    return _WebhooksApi["default"];
+  }
+});
 
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
@@ -60,6 +72,8 @@ var _ModelTransactionTemplate = _interopRequireDefault(require("./model/ModelTra
 
 var _ModelUser = _interopRequireDefault(require("./model/ModelUser"));
 
+var _ModelWebhook = _interopRequireDefault(require("./model/ModelWebhook"));
+
 var _RequestCreateTransactionTemplate = _interopRequireDefault(require("./model/RequestCreateTransactionTemplate"));
 
 var _RequestRegisterUser = _interopRequireDefault(require("./model/RequestRegisterUser"));
@@ -67,5 +81,7 @@ var _RequestRegisterUser = _interopRequireDefault(require("./model/RequestRegist
 var _TransactionTemplatesApi = _interopRequireDefault(require("./api/TransactionTemplatesApi"));
 
 var _UsersApi = _interopRequireDefault(require("./api/UsersApi"));
+
+var _WebhooksApi = _interopRequireDefault(require("./api/WebhooksApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

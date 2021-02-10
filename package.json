@@ -7,11 +7,10 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "prepack": "npm run build",
     "test": "mocha --require @babel/register --recursive",
     "browserify": "browserify dist/index.js -s TripartieWebApi -o dist/tripartiewebapi-jsclient.js",
     "tinyify": "browserify dist/index.js -s TripartieWebApi -p tinyify -o dist/tripartiewebapi-jsclient.min.js",
-    "deploy": "npm run build && npm run browserify && npm run tinyify"
+    "prepack": "npm run build && npm run browserify && npm run tinyify"
   },
   "browser": {
     "fs": false

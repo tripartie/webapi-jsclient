@@ -43,8 +43,8 @@ var UsersApi = /*#__PURE__*/function () {
    * Unregister
    * Unregister a User using its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both.<br /> This wont delete the User's Tripartie account. 
    * @param {Object} opts Optional parameters
-   * @param {String} opts.externalId The resource's External ID.
-   * @param {Number} opts.tripartieId The resource's Tripartie ID.
+   * @param {String} opts.externalId The User's External ID.
+   * @param {Number} opts.tripartieId The User's Tripartie ID.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
 
@@ -71,8 +71,8 @@ var UsersApi = /*#__PURE__*/function () {
      * Unregister
      * Unregister a User using its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both.<br /> This wont delete the User's Tripartie account. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.externalId The resource's External ID.
-     * @param {Number} opts.tripartieId The resource's Tripartie ID.
+     * @param {String} opts.externalId The User's External ID.
+     * @param {Number} opts.tripartieId The User's Tripartie ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 
@@ -87,8 +87,8 @@ var UsersApi = /*#__PURE__*/function () {
      * Fetch
      * Fetch a User by its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.externalId The resource's External ID.
-     * @param {Number} opts.tripartieId The resource's Tripartie ID.
+     * @param {String} opts.externalId The User's External ID.
+     * @param {Number} opts.tripartieId The User's Tripartie ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelUser} and HTTP response
      */
 
@@ -114,8 +114,8 @@ var UsersApi = /*#__PURE__*/function () {
      * Fetch
      * Fetch a User by its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.externalId The resource's External ID.
-     * @param {Number} opts.tripartieId The resource's Tripartie ID.
+     * @param {String} opts.externalId The User's External ID.
+     * @param {Number} opts.tripartieId The User's Tripartie ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelUser}
      */
 

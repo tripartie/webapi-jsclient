@@ -215,7 +215,7 @@ ModelTransactionTemplate.prototype['sellerFees'] = undefined;
 
 ModelTransactionTemplate.prototype['sellerTotal'] = undefined;
 /**
- * The original ad's URL.
+ * The original Ad's URL.
  * @member {String} adUrl
  */
 

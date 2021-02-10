@@ -43,8 +43,8 @@ var TransactionTemplatesApi = /*#__PURE__*/function () {
    * Fetch
    * Fetch a Transaction template by its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both. 
    * @param {Object} opts Optional parameters
-   * @param {String} opts.externalId The resource's External ID.
-   * @param {Number} opts.tripartieId The resource's Tripartie ID.
+   * @param {String} opts.externalId The Transaction template's External ID.
+   * @param {Number} opts.tripartieId The Transaction template's Tripartie ID.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelTransactionTemplate} and HTTP response
    */
 
@@ -71,8 +71,8 @@ var TransactionTemplatesApi = /*#__PURE__*/function () {
      * Fetch
      * Fetch a Transaction template by its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.externalId The resource's External ID.
-     * @param {Number} opts.tripartieId The resource's Tripartie ID.
+     * @param {String} opts.externalId The Transaction template's External ID.
+     * @param {Number} opts.tripartieId The Transaction template's Tripartie ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelTransactionTemplate}
      */
 

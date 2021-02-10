@@ -164,7 +164,7 @@ RequestCreateTransactionTemplate.prototype['currency'] = undefined;
 
 RequestCreateTransactionTemplate.prototype['flow'] = undefined;
 /**
- * The original ad's URL.
+ * The original Ad's URL.
  * @member {String} adUrl
  */
 
