@@ -2,24 +2,24 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **Number** | The Transaction template&#39;s Tripartie ID. | [optional] 
-**permalink** | **String** | The template permalink. &lt;strong&gt;This is what you need for the Secured Payment button.&lt;/strong&gt; | [optional] 
-**title** | **String** | The title. | [optional] 
-**description** | **String** | The description. | [optional] 
-**externalId** | **String** | The Transaction template&#39;s External ID. | [optional] 
-**sellerExternalId** | **String** | The Seller&#39;s External ID. | [optional] 
-**sellerTripartieId** | **String** | The Seller&#39;s Tripartie ID. | [optional] 
-**subTotal** | **Number** | The price, in cents. | [optional] 
-**currency** | **String** | The currency code (ISO 4217). | [optional] 
-**flow** | **String** | The flow. | [optional] 
-**buyerFees** | **Number** | The buyer&#39;s fees, in cents. | [optional] 
-**buyerTotal** | **Number** | The buyer&#39;s total, in cents. | [optional] 
-**sellerFees** | **Number** | The seller&#39;s fees, in cents. | [optional] 
-**sellerTotal** | **Number** | The seller&#39;s total, in cents. | [optional] 
-**adUrl** | **String** | The original ad&#39;s URL. | [optional] 
-**allowPriceChange** | **Boolean** | Allow price negociation? | [optional] 
-**hasPicture** | **Boolean** | Has a picture? | [optional] 
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | **Number** | The Transaction template&#39;s Tripartie ID.
+**permalink** | **String** | The template permalink. **This is what you need for the Secured Payment button.**
+**title** | **String** | The title.
+**description** | **String** | The description.
+**externalId** | **String** | The Transaction template&#39;s External ID.
+**sellerExternalId** | **String** | The Seller&#39;s External ID.
+**sellerTripartieId** | **String** | The Seller&#39;s Tripartie ID.
+**subTotal** | **Number** | The price, in cents.
+**currency** | **String** | The currency code (ISO 4217).
+**flow** | **String** | The flow.
+**buyerFees** | **Number** | The buyer&#39;s fees, in cents.
+**buyerTotal** | **Number** | The buyer&#39;s total, in cents.
+**sellerFees** | **Number** | The seller&#39;s fees, in cents.
+**sellerTotal** | **Number** | The seller&#39;s total, in cents.
+**adUrl** | **String** | The original Ad&#39;s URL.
+**allowPriceChange** | **Boolean** | Allow price negociation?
+**hasPicture** | **Boolean** | Has a picture?
 
 

@@ -34,7 +34,7 @@ const TripartieWebAPI = require('@tripartie/webapi-jsclient');
 
 const defaultClient = TripartieWebAPI.ApiClient.instance;
 const ClientIdAuth = defaultClient.authentications['ClientIdAuth'];
-ClientIdAuth.apiKey = "YOUR API KEY"
+ClientIdAuth.apiKey = "YOUR CLIENT ID"
 
 const usersApi = new TripartieWebApi.UsersApi();
 const user = {
@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 *TripartieWebAPI.UsersApi* | [**unregister**](docs/UsersApi.md#unregister) | **DELETE** /api/web/users/ | Unregister
 *TripartieWebAPI.UsersApi* | [**fetch**](docs/UsersApi.md#fetch) | **GET** /api/web/users/ | Fetch
 *TripartieWebAPI.UsersApi* | [**register**](docs/UsersApi.md#register) | **POST** /api/web/users/ | Register
+*TripartieWebAPI.WebhooksApi* | [**validate**](docs/WebhooksApi.md#validate) | **GET** /api/web/webhooks/ | Validate
 
 
 ## Documentation for Models
@@ -89,6 +90,7 @@ Class | Method | HTTP request | Description
  - [TripartieWebAPI.Error](docs/Error.md)
  - [TripartieWebAPI.ModelTransactionTemplate](docs/ModelTransactionTemplate.md)
  - [TripartieWebAPI.ModelUser](docs/ModelUser.md)
+ - [TripartieWebAPI.ModelWebhook](docs/ModelWebhook.md)
  - [TripartieWebAPI.RequestCreateTransactionTemplate](docs/RequestCreateTransactionTemplate.md)
  - [TripartieWebAPI.RequestRegisterUser](docs/RequestRegisterUser.md)
 

@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **Number** |  | [optional] 
-**errors** | [**OneOfobjectstring**](OneOfobjectstring.md) |  | [optional] 
+**errors** | [**Object\|String**] |  | [optional] 
 
 

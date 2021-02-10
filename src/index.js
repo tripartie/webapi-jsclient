@@ -1,6 +1,5 @@
 /**
  * Tripartie Web API
- * This document describes all use cases offered by the Tripartie Web API.<br /><br /> The Tripartie Web API allows you to easily create Transaction templates.<br /> Those templates allows a User (the Buyer) to quickly initiate a Transaction pre-configured by another User (the Seller).<br /> This allows you to add a Secured Payment button on your website pages.<br /> To facilitate working with the Web API, we built libraries for common developpement environment.<br/><br/> You're reading the documentation for version 1.0 of the Web API.<br/> Go to version <select id=\"version-switcher\"></select> 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@tripartie.com
@@ -16,10 +15,12 @@ import ApiClient from './ApiClient';
 import Error from './model/Error';
 import ModelTransactionTemplate from './model/ModelTransactionTemplate';
 import ModelUser from './model/ModelUser';
+import ModelWebhook from './model/ModelWebhook';
 import RequestCreateTransactionTemplate from './model/RequestCreateTransactionTemplate';
 import RequestRegisterUser from './model/RequestRegisterUser';
 import TransactionTemplatesApi from './api/TransactionTemplatesApi';
 import UsersApi from './api/UsersApi';
+import WebhooksApi from './api/WebhooksApi';
 
 
 /**
@@ -79,6 +80,12 @@ export {
     ModelUser,
 
     /**
+     * The ModelWebhook model constructor.
+     * @property {module:model/ModelWebhook}
+     */
+    ModelWebhook,
+
+    /**
      * The RequestCreateTransactionTemplate model constructor.
      * @property {module:model/RequestCreateTransactionTemplate}
      */
@@ -100,5 +107,11 @@ export {
     * The UsersApi service constructor.
     * @property {module:api/UsersApi}
     */
-    UsersApi
+    UsersApi,
+
+    /**
+    * The WebhooksApi service constructor.
+    * @property {module:api/WebhooksApi}
+    */
+    WebhooksApi
 };

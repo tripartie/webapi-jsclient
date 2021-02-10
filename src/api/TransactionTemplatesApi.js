@@ -1,6 +1,5 @@
 /**
  * Tripartie Web API
- * This document describes all use cases offered by the Tripartie Web API.<br /><br /> The Tripartie Web API allows you to easily create Transaction templates.<br /> Those templates allows a User (the Buyer) to quickly initiate a Transaction pre-configured by another User (the Seller).<br /> This allows you to add a Secured Payment button on your website pages.<br /> To facilitate working with the Web API, we built libraries for common developpement environment.<br/><br/> You're reading the documentation for version 1.0 of the Web API.<br/> Go to version <select id=\"version-switcher\"></select> 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@tripartie.com
@@ -41,8 +40,8 @@ export default class TransactionTemplatesApi {
      * Fetch
      * Fetch a Transaction template by its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.externalId The resource's External ID.
-     * @param {Number} opts.tripartieId The resource's Tripartie ID.
+     * @param {String} opts.externalId The Transaction template's External ID.
+     * @param {Number} opts.tripartieId The Transaction template's Tripartie ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelTransactionTemplate} and HTTP response
      */
     fetchWithHttpInfo(opts) {
@@ -75,8 +74,8 @@ export default class TransactionTemplatesApi {
      * Fetch
      * Fetch a Transaction template by its External ID or Tripartie ID.<br /> You MUST provide either <code>external-id</code> or <code>tripartie-id</code>, but not both. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.externalId The resource's External ID.
-     * @param {Number} opts.tripartieId The resource's Tripartie ID.
+     * @param {String} opts.externalId The Transaction template's External ID.
+     * @param {Number} opts.tripartieId The Transaction template's Tripartie ID.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelTransactionTemplate}
      */
     fetch(opts) {
