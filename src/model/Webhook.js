@@ -1,5 +1,6 @@
 /**
  * Tripartie Web API
+ * This document describes all use cases offered by the Tripartie Web API.<br /><br /> The Tripartie Web API allows you to easily create Transaction templates.<br /> A Transaction template allows a User (the Buyer) to safely initiate a Transaction pre-configured by another User (the Seller).<br /> This allows you to add a Secured Payment button on your website pages.<br /><br /> To facilitate working with the Web API, we built libraries for common development environment:<br/> <ul class=\"bullet\">   <li><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/tripartie/webapi-jsclient\">Javascript</a></li> </ul> <br/> You're reading the documentation for version 1.0 of the Web API.<br/> Go to version <select id=\"version-switcher\"></select> 
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@tripartie.com
@@ -13,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ModelWebhook model module.
- * @module model/ModelWebhook
+ * The Webhook model module.
+ * @module model/Webhook
  * @version 1.0
  */
-class ModelWebhook {
+class Webhook {
     /**
-     * Constructs a new <code>ModelWebhook</code>.
-     * @alias module:model/ModelWebhook
+     * Constructs a new <code>Webhook</code>.
+     * @alias module:model/Webhook
      */
     constructor() { 
         
-        ModelWebhook.initialize(this);
+        Webhook.initialize(this);
     }
 
     /**
@@ -36,16 +37,19 @@ class ModelWebhook {
     }
 
     /**
-     * Constructs a <code>ModelWebhook</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Webhook</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ModelWebhook} obj Optional instance to populate.
-     * @return {module:model/ModelWebhook} The populated <code>ModelWebhook</code> instance.
+     * @param {module:model/Webhook} obj Optional instance to populate.
+     * @return {module:model/Webhook} The populated <code>Webhook</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ModelWebhook();
+            obj = obj || new Webhook();
 
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            }
             if (data.hasOwnProperty('eventType')) {
                 obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
             }
@@ -54,6 +58,12 @@ class ModelWebhook {
             }
             if (data.hasOwnProperty('transactionTemplateTripartieId')) {
                 obj['transactionTemplateTripartieId'] = ApiClient.convertToType(data['transactionTemplateTripartieId'], 'Number');
+            }
+            if (data.hasOwnProperty('buyerExternalId')) {
+                obj['buyerExternalId'] = ApiClient.convertToType(data['buyerExternalId'], 'String');
+            }
+            if (data.hasOwnProperty('buyerTripartieId')) {
+                obj['buyerTripartieId'] = ApiClient.convertToType(data['buyerTripartieId'], 'Number');
             }
             if (data.hasOwnProperty('eventTimestamp')) {
                 obj['eventTimestamp'] = ApiClient.convertToType(data['eventTimestamp'], 'Number');
@@ -66,28 +76,46 @@ class ModelWebhook {
 }
 
 /**
- * The webhook type.
- * @member {module:model/ModelWebhook.EventTypeEnum} eventType
+ * The Webhook UUID.
+ * @member {String} uuid
  */
-ModelWebhook.prototype['eventType'] = undefined;
+Webhook.prototype['uuid'] = undefined;
+
+/**
+ * The webhook type.
+ * @member {module:model/Webhook.EventTypeEnum} eventType
+ */
+Webhook.prototype['eventType'] = undefined;
 
 /**
  * The Transaction template's External ID.
  * @member {String} transactionTemplateExternalId
  */
-ModelWebhook.prototype['transactionTemplateExternalId'] = undefined;
+Webhook.prototype['transactionTemplateExternalId'] = undefined;
 
 /**
  * The Transaction template's Tripartie ID.
  * @member {Number} transactionTemplateTripartieId
  */
-ModelWebhook.prototype['transactionTemplateTripartieId'] = undefined;
+Webhook.prototype['transactionTemplateTripartieId'] = undefined;
+
+/**
+ * The Buyer's External ID.
+ * @member {String} buyerExternalId
+ */
+Webhook.prototype['buyerExternalId'] = undefined;
+
+/**
+ * The Buyer's Tripartie ID.
+ * @member {Number} buyerTripartieId
+ */
+Webhook.prototype['buyerTripartieId'] = undefined;
 
 /**
  * The event timestamp.
  * @member {Number} eventTimestamp
  */
-ModelWebhook.prototype['eventTimestamp'] = undefined;
+Webhook.prototype['eventTimestamp'] = undefined;
 
 
 
@@ -98,7 +126,7 @@ ModelWebhook.prototype['eventTimestamp'] = undefined;
  * @enum {String}
  * @readonly
  */
-ModelWebhook['EventTypeEnum'] = {
+Webhook['EventTypeEnum'] = {
 
     /**
      * value: "proposition_sent"
@@ -133,5 +161,5 @@ ModelWebhook['EventTypeEnum'] = {
 
 
 
-export default ModelWebhook;
+export default Webhook;
 

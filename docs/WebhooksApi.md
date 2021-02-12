@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## validate
 
-> ModelWebhook validate(opts)
+> Webhook validate(opts)
 
 Validate
 
@@ -29,10 +29,7 @@ ClientIdAuth.apiKey = 'YOUR CLIENT ID';
 
 let webhooksApi = new TripartieWebAPI.WebhooksApi();
 let opts = {
-  'eventType': proposition_sent, // String | The webhook type.
-  'transactionTemplateExternalId': template-87, // String | The Transaction template's External ID.
-  'transactionTemplateTripartieId': 24, // Number | The Transaction template's Tripartie ID.
-  'eventTimestamp': 1612893903 // Number | The event timestamp.
+  'uuid': '123e4567-e89b-12d3-a456-426614174000' // String | The Webhook UUID.
 };
 webhooksApi.validate(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -47,14 +44,11 @@ webhooksApi.validate(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventType** | **String**| The webhook type. | [optional] 
- **transactionTemplateExternalId** | **String**| The Transaction template&#39;s External ID. | [optional] 
- **transactionTemplateTripartieId** | **Number**| The Transaction template&#39;s Tripartie ID. | [optional] 
- **eventTimestamp** | **Number**| The event timestamp. | [optional] 
+ **uuid** | **String**| The Webhook UUID. | [optional] 
 
 ### Return type
 
-[**ModelWebhook**](ModelWebhook.md)
+[**Webhook**](Webhook.md)
 
 ### Authorization
 

@@ -15,9 +15,9 @@ import ApiClient from './ApiClient';
 import Error from './model/Error';
 import ModelTransactionTemplate from './model/ModelTransactionTemplate';
 import ModelUser from './model/ModelUser';
-import ModelWebhook from './model/ModelWebhook';
 import RequestCreateTransactionTemplate from './model/RequestCreateTransactionTemplate';
 import RequestRegisterUser from './model/RequestRegisterUser';
+import Webhook from './model/Webhook';
 import TransactionTemplatesApi from './api/TransactionTemplatesApi';
 import UsersApi from './api/UsersApi';
 import WebhooksApi from './api/WebhooksApi';
@@ -80,12 +80,6 @@ export {
     ModelUser,
 
     /**
-     * The ModelWebhook model constructor.
-     * @property {module:model/ModelWebhook}
-     */
-    ModelWebhook,
-
-    /**
      * The RequestCreateTransactionTemplate model constructor.
      * @property {module:model/RequestCreateTransactionTemplate}
      */
@@ -96,6 +90,12 @@ export {
      * @property {module:model/RequestRegisterUser}
      */
     RequestRegisterUser,
+
+    /**
+     * The Webhook model constructor.
+     * @property {module:model/Webhook}
+     */
+    Webhook,
 
     /**
     * The TransactionTemplatesApi service constructor.

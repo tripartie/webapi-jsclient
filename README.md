@@ -90,9 +90,9 @@ Class | Method | HTTP request | Description
  - [TripartieWebAPI.Error](docs/Error.md)
  - [TripartieWebAPI.ModelTransactionTemplate](docs/ModelTransactionTemplate.md)
  - [TripartieWebAPI.ModelUser](docs/ModelUser.md)
- - [TripartieWebAPI.ModelWebhook](docs/ModelWebhook.md)
  - [TripartieWebAPI.RequestCreateTransactionTemplate](docs/RequestCreateTransactionTemplate.md)
  - [TripartieWebAPI.RequestRegisterUser](docs/RequestRegisterUser.md)
+ - [TripartieWebAPI.Webhook](docs/Webhook.md)
 
 
 ## Documentation for Authorization

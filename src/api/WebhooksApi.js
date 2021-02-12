@@ -13,7 +13,7 @@
 
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import ModelWebhook from '../model/ModelWebhook';
+import Webhook from '../model/Webhook';
 
 /**
 * Webhooks service.
@@ -39,11 +39,8 @@ export default class WebhooksApi {
      * Validate
      * Check a webhook's authenticity 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.eventType The webhook type.
-     * @param {String} opts.transactionTemplateExternalId The Transaction template's External ID.
-     * @param {Number} opts.transactionTemplateTripartieId The Transaction template's Tripartie ID.
-     * @param {Number} opts.eventTimestamp The event timestamp.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelWebhook} and HTTP response
+     * @param {String} opts.uuid The Webhook UUID.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Webhook} and HTTP response
      */
     validateWithHttpInfo(opts) {
       opts = opts || {};
@@ -52,10 +49,7 @@ export default class WebhooksApi {
       let pathParams = {
       };
       let queryParams = {
-        'event-type': opts['eventType'],
-        'transaction-template-external-id': opts['transactionTemplateExternalId'],
-        'transaction-template-tripartie-id': opts['transactionTemplateTripartieId'],
-        'event-timestamp': opts['eventTimestamp']
+        'uuid': opts['uuid']
       };
       let headerParams = {
       };
@@ -65,7 +59,7 @@ export default class WebhooksApi {
       let authNames = ['ClientIdAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelWebhook;
+      let returnType = Webhook;
       return this.apiClient.callApi(
         '/api/web/webhooks/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -77,11 +71,8 @@ export default class WebhooksApi {
      * Validate
      * Check a webhook's authenticity 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.eventType The webhook type.
-     * @param {String} opts.transactionTemplateExternalId The Transaction template's External ID.
-     * @param {Number} opts.transactionTemplateTripartieId The Transaction template's Tripartie ID.
-     * @param {Number} opts.eventTimestamp The event timestamp.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelWebhook}
+     * @param {String} opts.uuid The Webhook UUID.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Webhook}
      */
     validate(opts) {
       return this.validateWithHttpInfo(opts)
