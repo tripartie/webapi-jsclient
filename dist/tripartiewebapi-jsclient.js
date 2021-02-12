@@ -3100,7 +3100,7 @@ var TransactionTemplatesApi = /*#__PURE__*/function () {
 }();
 
 exports["default"] = TransactionTemplatesApi;
-},{"../ApiClient":8,"../model/Error":13,"../model/ModelTransactionTemplate":14,"../model/RequestCreateTransactionTemplate":17}],10:[function(require,module,exports){
+},{"../ApiClient":8,"../model/Error":13,"../model/ModelTransactionTemplate":14,"../model/RequestCreateTransactionTemplate":16}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3273,7 +3273,7 @@ var UsersApi = /*#__PURE__*/function () {
 }();
 
 exports["default"] = UsersApi;
-},{"../ApiClient":8,"../model/Error":13,"../model/ModelUser":15,"../model/RequestRegisterUser":18}],11:[function(require,module,exports){
+},{"../ApiClient":8,"../model/Error":13,"../model/ModelUser":15,"../model/RequestRegisterUser":17}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3285,7 +3285,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Error = _interopRequireDefault(require("../model/Error"));
 
-var _ModelWebhook = _interopRequireDefault(require("../model/ModelWebhook"));
+var _Webhook = _interopRequireDefault(require("../model/Webhook"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -3317,11 +3317,8 @@ var WebhooksApi = /*#__PURE__*/function () {
    * Validate
    * Check a webhook's authenticity 
    * @param {Object} opts Optional parameters
-   * @param {module:model/String} opts.eventType The webhook type.
-   * @param {String} opts.transactionTemplateExternalId The Transaction template's External ID.
-   * @param {Number} opts.transactionTemplateTripartieId The Transaction template's Tripartie ID.
-   * @param {Number} opts.eventTimestamp The event timestamp.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ModelWebhook} and HTTP response
+   * @param {String} opts.uuid The Webhook UUID.
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Webhook} and HTTP response
    */
 
 
@@ -3332,28 +3329,22 @@ var WebhooksApi = /*#__PURE__*/function () {
       var postBody = null;
       var pathParams = {};
       var queryParams = {
-        'event-type': opts['eventType'],
-        'transaction-template-external-id': opts['transactionTemplateExternalId'],
-        'transaction-template-tripartie-id': opts['transactionTemplateTripartieId'],
-        'event-timestamp': opts['eventTimestamp']
+        'uuid': opts['uuid']
       };
       var headerParams = {};
       var formParams = {};
       var authNames = ['ClientIdAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ModelWebhook["default"];
+      var returnType = _Webhook["default"];
       return this.apiClient.callApi('/api/web/webhooks/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Validate
      * Check a webhook's authenticity 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.eventType The webhook type.
-     * @param {String} opts.transactionTemplateExternalId The Transaction template's External ID.
-     * @param {Number} opts.transactionTemplateTripartieId The Transaction template's Tripartie ID.
-     * @param {Number} opts.eventTimestamp The event timestamp.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ModelWebhook}
+     * @param {String} opts.uuid The Webhook UUID.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Webhook}
      */
 
   }, {
@@ -3369,7 +3360,7 @@ var WebhooksApi = /*#__PURE__*/function () {
 }();
 
 exports["default"] = WebhooksApi;
-},{"../ApiClient":8,"../model/Error":13,"../model/ModelWebhook":16}],12:[function(require,module,exports){
+},{"../ApiClient":8,"../model/Error":13,"../model/Webhook":18}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3399,12 +3390,6 @@ Object.defineProperty(exports, "ModelUser", {
     return _ModelUser["default"];
   }
 });
-Object.defineProperty(exports, "ModelWebhook", {
-  enumerable: true,
-  get: function get() {
-    return _ModelWebhook["default"];
-  }
-});
 Object.defineProperty(exports, "RequestCreateTransactionTemplate", {
   enumerable: true,
   get: function get() {
@@ -3415,6 +3400,12 @@ Object.defineProperty(exports, "RequestRegisterUser", {
   enumerable: true,
   get: function get() {
     return _RequestRegisterUser["default"];
+  }
+});
+Object.defineProperty(exports, "Webhook", {
+  enumerable: true,
+  get: function get() {
+    return _Webhook["default"];
   }
 });
 Object.defineProperty(exports, "TransactionTemplatesApi", {
@@ -3444,11 +3435,11 @@ var _ModelTransactionTemplate = _interopRequireDefault(require("./model/ModelTra
 
 var _ModelUser = _interopRequireDefault(require("./model/ModelUser"));
 
-var _ModelWebhook = _interopRequireDefault(require("./model/ModelWebhook"));
-
 var _RequestCreateTransactionTemplate = _interopRequireDefault(require("./model/RequestCreateTransactionTemplate"));
 
 var _RequestRegisterUser = _interopRequireDefault(require("./model/RequestRegisterUser"));
+
+var _Webhook = _interopRequireDefault(require("./model/Webhook"));
 
 var _TransactionTemplatesApi = _interopRequireDefault(require("./api/TransactionTemplatesApi"));
 
@@ -3457,7 +3448,7 @@ var _UsersApi = _interopRequireDefault(require("./api/UsersApi"));
 var _WebhooksApi = _interopRequireDefault(require("./api/WebhooksApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-},{"./ApiClient":8,"./api/TransactionTemplatesApi":9,"./api/UsersApi":10,"./api/WebhooksApi":11,"./model/Error":13,"./model/ModelTransactionTemplate":14,"./model/ModelUser":15,"./model/ModelWebhook":16,"./model/RequestCreateTransactionTemplate":17,"./model/RequestRegisterUser":18}],13:[function(require,module,exports){
+},{"./ApiClient":8,"./api/TransactionTemplatesApi":9,"./api/UsersApi":10,"./api/WebhooksApi":11,"./model/Error":13,"./model/ModelTransactionTemplate":14,"./model/ModelUser":15,"./model/RequestCreateTransactionTemplate":16,"./model/RequestRegisterUser":17,"./model/Webhook":18}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3885,150 +3876,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
- * The ModelWebhook model module.
- * @module model/ModelWebhook
- * @version 1.0
- */
-var ModelWebhook = /*#__PURE__*/function () {
-  /**
-   * Constructs a new <code>ModelWebhook</code>.
-   * @alias module:model/ModelWebhook
-   */
-  function ModelWebhook() {
-    _classCallCheck(this, ModelWebhook);
-
-    ModelWebhook.initialize(this);
-  }
-  /**
-   * Initializes the fields of this object.
-   * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-   * Only for internal use.
-   */
-
-
-  _createClass(ModelWebhook, null, [{
-    key: "initialize",
-    value: function initialize(obj) {}
-    /**
-     * Constructs a <code>ModelWebhook</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ModelWebhook} obj Optional instance to populate.
-     * @return {module:model/ModelWebhook} The populated <code>ModelWebhook</code> instance.
-     */
-
-  }, {
-    key: "constructFromObject",
-    value: function constructFromObject(data, obj) {
-      if (data) {
-        obj = obj || new ModelWebhook();
-
-        if (data.hasOwnProperty('eventType')) {
-          obj['eventType'] = _ApiClient["default"].convertToType(data['eventType'], 'String');
-        }
-
-        if (data.hasOwnProperty('transactionTemplateExternalId')) {
-          obj['transactionTemplateExternalId'] = _ApiClient["default"].convertToType(data['transactionTemplateExternalId'], 'String');
-        }
-
-        if (data.hasOwnProperty('transactionTemplateTripartieId')) {
-          obj['transactionTemplateTripartieId'] = _ApiClient["default"].convertToType(data['transactionTemplateTripartieId'], 'Number');
-        }
-
-        if (data.hasOwnProperty('eventTimestamp')) {
-          obj['eventTimestamp'] = _ApiClient["default"].convertToType(data['eventTimestamp'], 'Number');
-        }
-      }
-
-      return obj;
-    }
-  }]);
-
-  return ModelWebhook;
-}();
-/**
- * The webhook type.
- * @member {module:model/ModelWebhook.EventTypeEnum} eventType
- */
-
-
-ModelWebhook.prototype['eventType'] = undefined;
-/**
- * The Transaction template's External ID.
- * @member {String} transactionTemplateExternalId
- */
-
-ModelWebhook.prototype['transactionTemplateExternalId'] = undefined;
-/**
- * The Transaction template's Tripartie ID.
- * @member {Number} transactionTemplateTripartieId
- */
-
-ModelWebhook.prototype['transactionTemplateTripartieId'] = undefined;
-/**
- * The event timestamp.
- * @member {Number} eventTimestamp
- */
-
-ModelWebhook.prototype['eventTimestamp'] = undefined;
-/**
- * Allowed values for the <code>eventType</code> property.
- * @enum {String}
- * @readonly
- */
-
-ModelWebhook['EventTypeEnum'] = {
-  /**
-   * value: "proposition_sent"
-   * @const
-   */
-  "proposition_sent": "proposition_sent",
-
-  /**
-   * value: "proposition_accepted"
-   * @const
-   */
-  "proposition_accepted": "proposition_accepted",
-
-  /**
-   * value: "proposition_rejected"
-   * @const
-   */
-  "proposition_rejected": "proposition_rejected",
-
-  /**
-   * value: "transaction_completed"
-   * @const
-   */
-  "transaction_completed": "transaction_completed",
-
-  /**
-   * value: "transaction_canceled"
-   * @const
-   */
-  "transaction_canceled": "transaction_canceled"
-};
-var _default = ModelWebhook;
-exports["default"] = _default;
-},{"../ApiClient":8}],17:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _ApiClient = _interopRequireDefault(require("../ApiClient"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/**
  * The RequestCreateTransactionTemplate model module.
  * @module model/RequestCreateTransactionTemplate
  * @version 1.0
@@ -4197,7 +4044,7 @@ RequestCreateTransactionTemplate.prototype['allowPriceChange'] = true;
 RequestCreateTransactionTemplate.prototype['picture'] = undefined;
 var _default = RequestCreateTransactionTemplate;
 exports["default"] = _default;
-},{"../ApiClient":8}],18:[function(require,module,exports){
+},{"../ApiClient":8}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4296,6 +4143,180 @@ RequestRegisterUser.prototype['externalId'] = undefined;
 
 RequestRegisterUser.prototype['displayName'] = undefined;
 var _default = RequestRegisterUser;
+exports["default"] = _default;
+},{"../ApiClient":8}],18:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * The Webhook model module.
+ * @module model/Webhook
+ * @version 1.0
+ */
+var Webhook = /*#__PURE__*/function () {
+  /**
+   * Constructs a new <code>Webhook</code>.
+   * @alias module:model/Webhook
+   */
+  function Webhook() {
+    _classCallCheck(this, Webhook);
+
+    Webhook.initialize(this);
+  }
+  /**
+   * Initializes the fields of this object.
+   * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+   * Only for internal use.
+   */
+
+
+  _createClass(Webhook, null, [{
+    key: "initialize",
+    value: function initialize(obj) {}
+    /**
+     * Constructs a <code>Webhook</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Webhook} obj Optional instance to populate.
+     * @return {module:model/Webhook} The populated <code>Webhook</code> instance.
+     */
+
+  }, {
+    key: "constructFromObject",
+    value: function constructFromObject(data, obj) {
+      if (data) {
+        obj = obj || new Webhook();
+
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
+        if (data.hasOwnProperty('eventType')) {
+          obj['eventType'] = _ApiClient["default"].convertToType(data['eventType'], 'String');
+        }
+
+        if (data.hasOwnProperty('transactionTemplateExternalId')) {
+          obj['transactionTemplateExternalId'] = _ApiClient["default"].convertToType(data['transactionTemplateExternalId'], 'String');
+        }
+
+        if (data.hasOwnProperty('transactionTemplateTripartieId')) {
+          obj['transactionTemplateTripartieId'] = _ApiClient["default"].convertToType(data['transactionTemplateTripartieId'], 'Number');
+        }
+
+        if (data.hasOwnProperty('buyerExternalId')) {
+          obj['buyerExternalId'] = _ApiClient["default"].convertToType(data['buyerExternalId'], 'String');
+        }
+
+        if (data.hasOwnProperty('buyerTripartieId')) {
+          obj['buyerTripartieId'] = _ApiClient["default"].convertToType(data['buyerTripartieId'], 'Number');
+        }
+
+        if (data.hasOwnProperty('eventTimestamp')) {
+          obj['eventTimestamp'] = _ApiClient["default"].convertToType(data['eventTimestamp'], 'Number');
+        }
+      }
+
+      return obj;
+    }
+  }]);
+
+  return Webhook;
+}();
+/**
+ * The Webhook UUID.
+ * @member {String} uuid
+ */
+
+
+Webhook.prototype['uuid'] = undefined;
+/**
+ * The webhook type.
+ * @member {module:model/Webhook.EventTypeEnum} eventType
+ */
+
+Webhook.prototype['eventType'] = undefined;
+/**
+ * The Transaction template's External ID.
+ * @member {String} transactionTemplateExternalId
+ */
+
+Webhook.prototype['transactionTemplateExternalId'] = undefined;
+/**
+ * The Transaction template's Tripartie ID.
+ * @member {Number} transactionTemplateTripartieId
+ */
+
+Webhook.prototype['transactionTemplateTripartieId'] = undefined;
+/**
+ * The Buyer's External ID.
+ * @member {String} buyerExternalId
+ */
+
+Webhook.prototype['buyerExternalId'] = undefined;
+/**
+ * The Buyer's Tripartie ID.
+ * @member {Number} buyerTripartieId
+ */
+
+Webhook.prototype['buyerTripartieId'] = undefined;
+/**
+ * The event timestamp.
+ * @member {Number} eventTimestamp
+ */
+
+Webhook.prototype['eventTimestamp'] = undefined;
+/**
+ * Allowed values for the <code>eventType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+Webhook['EventTypeEnum'] = {
+  /**
+   * value: "proposition_sent"
+   * @const
+   */
+  "proposition_sent": "proposition_sent",
+
+  /**
+   * value: "proposition_accepted"
+   * @const
+   */
+  "proposition_accepted": "proposition_accepted",
+
+  /**
+   * value: "proposition_rejected"
+   * @const
+   */
+  "proposition_rejected": "proposition_rejected",
+
+  /**
+   * value: "transaction_completed"
+   * @const
+   */
+  "transaction_completed": "transaction_completed",
+
+  /**
+   * value: "transaction_canceled"
+   * @const
+   */
+  "transaction_canceled": "transaction_canceled"
+};
+var _default = Webhook;
 exports["default"] = _default;
 },{"../ApiClient":8}],19:[function(require,module,exports){
 

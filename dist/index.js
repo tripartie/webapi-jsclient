@@ -27,12 +27,6 @@ Object.defineProperty(exports, "ModelUser", {
     return _ModelUser["default"];
   }
 });
-Object.defineProperty(exports, "ModelWebhook", {
-  enumerable: true,
-  get: function get() {
-    return _ModelWebhook["default"];
-  }
-});
 Object.defineProperty(exports, "RequestCreateTransactionTemplate", {
   enumerable: true,
   get: function get() {
@@ -43,6 +37,12 @@ Object.defineProperty(exports, "RequestRegisterUser", {
   enumerable: true,
   get: function get() {
     return _RequestRegisterUser["default"];
+  }
+});
+Object.defineProperty(exports, "Webhook", {
+  enumerable: true,
+  get: function get() {
+    return _Webhook["default"];
   }
 });
 Object.defineProperty(exports, "TransactionTemplatesApi", {
@@ -72,11 +72,11 @@ var _ModelTransactionTemplate = _interopRequireDefault(require("./model/ModelTra
 
 var _ModelUser = _interopRequireDefault(require("./model/ModelUser"));
 
-var _ModelWebhook = _interopRequireDefault(require("./model/ModelWebhook"));
-
 var _RequestCreateTransactionTemplate = _interopRequireDefault(require("./model/RequestCreateTransactionTemplate"));
 
 var _RequestRegisterUser = _interopRequireDefault(require("./model/RequestRegisterUser"));
+
+var _Webhook = _interopRequireDefault(require("./model/Webhook"));
 
 var _TransactionTemplatesApi = _interopRequireDefault(require("./api/TransactionTemplatesApi"));
 
