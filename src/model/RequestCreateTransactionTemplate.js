@@ -78,6 +78,9 @@ class RequestCreateTransactionTemplate {
             if (data.hasOwnProperty('flow')) {
                 obj['flow'] = ApiClient.convertToType(data['flow'], 'String');
             }
+            if (data.hasOwnProperty('productCategory')) {
+                obj['productCategory'] = ApiClient.convertToType(data['productCategory'], 'String');
+            }
             if (data.hasOwnProperty('adUrl')) {
                 obj['adUrl'] = ApiClient.convertToType(data['adUrl'], 'String');
             }
@@ -143,6 +146,13 @@ RequestCreateTransactionTemplate.prototype['currency'] = undefined;
 RequestCreateTransactionTemplate.prototype['flow'] = undefined;
 
 /**
+ * The product category (required for improved anti-fraud protection).
+ * @member {module:model/RequestCreateTransactionTemplate.ProductCategoryEnum} productCategory
+ * @default 'other'
+ */
+RequestCreateTransactionTemplate.prototype['productCategory'] = 'other';
+
+/**
  * The original Ad's URL.
  * @member {String} adUrl
  */
@@ -163,6 +173,57 @@ RequestCreateTransactionTemplate.prototype['picture'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>productCategory</code> property.
+ * @enum {String}
+ * @readonly
+ */
+RequestCreateTransactionTemplate['ProductCategoryEnum'] = {
+
+    /**
+     * value: "auto_moto"
+     * @const
+     */
+    "auto_moto": "auto_moto",
+
+    /**
+     * value: "fashion"
+     * @const
+     */
+    "fashion": "fashion",
+
+    /**
+     * value: "house_garden"
+     * @const
+     */
+    "house_garden": "house_garden",
+
+    /**
+     * value: "service"
+     * @const
+     */
+    "service": "service",
+
+    /**
+     * value: "sport"
+     * @const
+     */
+    "sport": "sport",
+
+    /**
+     * value: "telecom"
+     * @const
+     */
+    "telecom": "telecom",
+
+    /**
+     * value: "other"
+     * @const
+     */
+    "other": "other"
+};
 
 
 
