@@ -3955,6 +3955,10 @@ var RequestCreateTransactionTemplate = /*#__PURE__*/function () {
           obj['flow'] = _ApiClient["default"].convertToType(data['flow'], 'String');
         }
 
+        if (data.hasOwnProperty('productCategory')) {
+          obj['productCategory'] = _ApiClient["default"].convertToType(data['productCategory'], 'String');
+        }
+
         if (data.hasOwnProperty('adUrl')) {
           obj['adUrl'] = _ApiClient["default"].convertToType(data['adUrl'], 'String');
         }
@@ -4024,6 +4028,13 @@ RequestCreateTransactionTemplate.prototype['currency'] = undefined;
 
 RequestCreateTransactionTemplate.prototype['flow'] = undefined;
 /**
+ * The product category (required for improved anti-fraud protection).
+ * @member {module:model/RequestCreateTransactionTemplate.ProductCategoryEnum} productCategory
+ * @default 'other'
+ */
+
+RequestCreateTransactionTemplate.prototype['productCategory'] = 'other';
+/**
  * The original Ad's URL.
  * @member {String} adUrl
  */
@@ -4042,6 +4053,55 @@ RequestCreateTransactionTemplate.prototype['allowPriceChange'] = true;
  */
 
 RequestCreateTransactionTemplate.prototype['picture'] = undefined;
+/**
+ * Allowed values for the <code>productCategory</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+RequestCreateTransactionTemplate['ProductCategoryEnum'] = {
+  /**
+   * value: "auto_moto"
+   * @const
+   */
+  "auto_moto": "auto_moto",
+
+  /**
+   * value: "fashion"
+   * @const
+   */
+  "fashion": "fashion",
+
+  /**
+   * value: "house_garden"
+   * @const
+   */
+  "house_garden": "house_garden",
+
+  /**
+   * value: "service"
+   * @const
+   */
+  "service": "service",
+
+  /**
+   * value: "sport"
+   * @const
+   */
+  "sport": "sport",
+
+  /**
+   * value: "telecom"
+   * @const
+   */
+  "telecom": "telecom",
+
+  /**
+   * value: "other"
+   * @const
+   */
+  "other": "other"
+};
 var _default = RequestCreateTransactionTemplate;
 exports["default"] = _default;
 },{"../ApiClient":8}],17:[function(require,module,exports){
