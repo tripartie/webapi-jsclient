@@ -36,7 +36,7 @@ const defaultClient = TripartieWebAPI.ApiClient.instance;
 const ClientIdAuth = defaultClient.authentications['ClientIdAuth'];
 ClientIdAuth.apiKey = "YOUR CLIENT ID"
 
-const usersApi = new TripartieWebApi.UsersApi();
+const usersApi = new TripartieWebAPI.UsersApi();
 const user = {
     email: "john.doe@gmail.com",
     externalId: "johndoe42",
