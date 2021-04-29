@@ -20,6 +20,8 @@ Name | Type | Description
 **sellerTotal** | **Number** | The seller&#39;s total, in cents.
 **adUrl** | **String** | The original Ad&#39;s URL.
 **allowPriceChange** | **Boolean** | Allow price negociation?
+**allowInPerson** | **Boolean** | Allow hand-over?
+**allowDelivery** | **Boolean** | Allow delivery?
 **hasPicture** | **Boolean** | Has a picture?
 
 

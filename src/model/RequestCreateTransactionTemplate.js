@@ -87,6 +87,12 @@ class RequestCreateTransactionTemplate {
             if (data.hasOwnProperty('allowPriceChange')) {
                 obj['allowPriceChange'] = ApiClient.convertToType(data['allowPriceChange'], 'Boolean');
             }
+            if (data.hasOwnProperty('allowInPerson')) {
+                obj['allowInPerson'] = ApiClient.convertToType(data['allowInPerson'], 'Boolean');
+            }
+            if (data.hasOwnProperty('allowDelivery')) {
+                obj['allowDelivery'] = ApiClient.convertToType(data['allowDelivery'], 'Boolean');
+            }
             if (data.hasOwnProperty('picture')) {
                 obj['picture'] = ApiClient.convertToType(data['picture'], 'String');
             }
@@ -164,6 +170,20 @@ RequestCreateTransactionTemplate.prototype['adUrl'] = undefined;
  * @default true
  */
 RequestCreateTransactionTemplate.prototype['allowPriceChange'] = true;
+
+/**
+ * Allow hand-over?
+ * @member {Boolean} allowInPerson
+ * @default true
+ */
+RequestCreateTransactionTemplate.prototype['allowInPerson'] = true;
+
+/**
+ * Allow delivery?
+ * @member {Boolean} allowDelivery
+ * @default true
+ */
+RequestCreateTransactionTemplate.prototype['allowDelivery'] = true;
 
 /**
  * Ad picture, in <strong>base64 format</strong>.<br /> Max initial file size: 2Mo.<br /> <strong>You MUST send only the binary code.</strong> Do not send the first part that some converters add into the binary code which is <code>data:image/png;base64,</code>. 

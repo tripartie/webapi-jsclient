@@ -94,6 +94,12 @@ class ModelTransactionTemplate {
             if (data.hasOwnProperty('allowPriceChange')) {
                 obj['allowPriceChange'] = ApiClient.convertToType(data['allowPriceChange'], 'Boolean');
             }
+            if (data.hasOwnProperty('allowInPerson')) {
+                obj['allowInPerson'] = ApiClient.convertToType(data['allowInPerson'], 'Boolean');
+            }
+            if (data.hasOwnProperty('allowDelivery')) {
+                obj['allowDelivery'] = ApiClient.convertToType(data['allowDelivery'], 'Boolean');
+            }
             if (data.hasOwnProperty('hasPicture')) {
                 obj['hasPicture'] = ApiClient.convertToType(data['hasPicture'], 'Boolean');
             }
@@ -199,6 +205,20 @@ ModelTransactionTemplate.prototype['adUrl'] = undefined;
  * @member {Boolean} allowPriceChange
  */
 ModelTransactionTemplate.prototype['allowPriceChange'] = undefined;
+
+/**
+ * Allow hand-over?
+ * @member {Boolean} allowInPerson
+ * @default true
+ */
+ModelTransactionTemplate.prototype['allowInPerson'] = true;
+
+/**
+ * Allow delivery?
+ * @member {Boolean} allowDelivery
+ * @default true
+ */
+ModelTransactionTemplate.prototype['allowDelivery'] = true;
 
 /**
  * Has a picture?

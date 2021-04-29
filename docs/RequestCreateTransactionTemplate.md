@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **productCategory** | **String** | The product category (required for improved anti-fraud protection). | [optional] [default to 'other']
 **adUrl** | **String** | The original Ad&#39;s URL. | [optional] 
 **allowPriceChange** | **Boolean** | Allow price negociation? | [optional] [default to true]
-**picture** | **String** | Ad picture, in **base64 format**.<br /> Max initial file size: 2Mo.<br />**You MUST send only the binary code.** Do not send the first part that some converters add into the binary code which is `data:image/png;base64, `.  | [optional] 
-
+**allowInPerson** | **Boolean** | Allow hand-over? | [optional] [default to true]
+**allowDelivery** | **Boolean** | Allow delivery? | [optional] [default to true]
+**picture** | **String** | Ad picture, in **base64 format**.<br /> Max initial file size: 2Mo.<br />**You MUST send only the binary code.** Do not send the first part that some converters add into the binary code which is `data:image/pn ;base64, `.  | [optional]
 
