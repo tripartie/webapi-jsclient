@@ -3654,6 +3654,14 @@ var ModelTransactionTemplate = /*#__PURE__*/function () {
           obj['allowPriceChange'] = _ApiClient["default"].convertToType(data['allowPriceChange'], 'Boolean');
         }
 
+        if (data.hasOwnProperty('allowInPerson')) {
+          obj['allowInPerson'] = _ApiClient["default"].convertToType(data['allowInPerson'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('allowDelivery')) {
+          obj['allowDelivery'] = _ApiClient["default"].convertToType(data['allowDelivery'], 'Boolean');
+        }
+
         if (data.hasOwnProperty('hasPicture')) {
           obj['hasPicture'] = _ApiClient["default"].convertToType(data['hasPicture'], 'Boolean');
         }
@@ -3762,6 +3770,20 @@ ModelTransactionTemplate.prototype['adUrl'] = undefined;
  */
 
 ModelTransactionTemplate.prototype['allowPriceChange'] = undefined;
+/**
+ * Allow hand-over?
+ * @member {Boolean} allowInPerson
+ * @default true
+ */
+
+ModelTransactionTemplate.prototype['allowInPerson'] = true;
+/**
+ * Allow delivery?
+ * @member {Boolean} allowDelivery
+ * @default true
+ */
+
+ModelTransactionTemplate.prototype['allowDelivery'] = true;
 /**
  * Has a picture?
  * @member {Boolean} hasPicture
@@ -3967,6 +3989,14 @@ var RequestCreateTransactionTemplate = /*#__PURE__*/function () {
           obj['allowPriceChange'] = _ApiClient["default"].convertToType(data['allowPriceChange'], 'Boolean');
         }
 
+        if (data.hasOwnProperty('allowInPerson')) {
+          obj['allowInPerson'] = _ApiClient["default"].convertToType(data['allowInPerson'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('allowDelivery')) {
+          obj['allowDelivery'] = _ApiClient["default"].convertToType(data['allowDelivery'], 'Boolean');
+        }
+
         if (data.hasOwnProperty('picture')) {
           obj['picture'] = _ApiClient["default"].convertToType(data['picture'], 'String');
         }
@@ -4047,6 +4077,20 @@ RequestCreateTransactionTemplate.prototype['adUrl'] = undefined;
  */
 
 RequestCreateTransactionTemplate.prototype['allowPriceChange'] = true;
+/**
+ * Allow hand-over?
+ * @member {Boolean} allowInPerson
+ * @default true
+ */
+
+RequestCreateTransactionTemplate.prototype['allowInPerson'] = true;
+/**
+ * Allow delivery?
+ * @member {Boolean} allowDelivery
+ * @default true
+ */
+
+RequestCreateTransactionTemplate.prototype['allowDelivery'] = true;
 /**
  * Ad picture, in <strong>base64 format</strong>.<br /> Max initial file size: 2Mo.<br /> <strong>You MUST send only the binary code.</strong> Do not send the first part that some converters add into the binary code which is <code>data:image/png;base64,</code>. 
  * @member {String} picture
