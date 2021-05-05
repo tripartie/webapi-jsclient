@@ -2968,7 +2968,7 @@ ApiClient.instance = new ApiClient();
 var _default = ApiClient;
 exports["default"] = _default;
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":3,"fs":2,"querystring":7,"superagent":22}],9:[function(require,module,exports){
+},{"buffer":3,"fs":2,"querystring":7,"superagent":23}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3273,7 +3273,7 @@ var UsersApi = /*#__PURE__*/function () {
 }();
 
 exports["default"] = UsersApi;
-},{"../ApiClient":8,"../model/Error":13,"../model/ModelUser":15,"../model/RequestRegisterUser":17}],11:[function(require,module,exports){
+},{"../ApiClient":8,"../model/Error":13,"../model/ModelUser":15,"../model/RequestRegisterUser":18}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3360,7 +3360,7 @@ var WebhooksApi = /*#__PURE__*/function () {
 }();
 
 exports["default"] = WebhooksApi;
-},{"../ApiClient":8,"../model/Error":13,"../model/Webhook":18}],12:[function(require,module,exports){
+},{"../ApiClient":8,"../model/Error":13,"../model/Webhook":19}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3394,6 +3394,12 @@ Object.defineProperty(exports, "RequestCreateTransactionTemplate", {
   enumerable: true,
   get: function get() {
     return _RequestCreateTransactionTemplate["default"];
+  }
+});
+Object.defineProperty(exports, "RequestCreateTransactionTemplatePackageFormat", {
+  enumerable: true,
+  get: function get() {
+    return _RequestCreateTransactionTemplatePackageFormat["default"];
   }
 });
 Object.defineProperty(exports, "RequestRegisterUser", {
@@ -3437,6 +3443,8 @@ var _ModelUser = _interopRequireDefault(require("./model/ModelUser"));
 
 var _RequestCreateTransactionTemplate = _interopRequireDefault(require("./model/RequestCreateTransactionTemplate"));
 
+var _RequestCreateTransactionTemplatePackageFormat = _interopRequireDefault(require("./model/RequestCreateTransactionTemplatePackageFormat"));
+
 var _RequestRegisterUser = _interopRequireDefault(require("./model/RequestRegisterUser"));
 
 var _Webhook = _interopRequireDefault(require("./model/Webhook"));
@@ -3448,7 +3456,7 @@ var _UsersApi = _interopRequireDefault(require("./api/UsersApi"));
 var _WebhooksApi = _interopRequireDefault(require("./api/WebhooksApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-},{"./ApiClient":8,"./api/TransactionTemplatesApi":9,"./api/UsersApi":10,"./api/WebhooksApi":11,"./model/Error":13,"./model/ModelTransactionTemplate":14,"./model/ModelUser":15,"./model/RequestCreateTransactionTemplate":16,"./model/RequestRegisterUser":17,"./model/Webhook":18}],13:[function(require,module,exports){
+},{"./ApiClient":8,"./api/TransactionTemplatesApi":9,"./api/UsersApi":10,"./api/WebhooksApi":11,"./model/Error":13,"./model/ModelTransactionTemplate":14,"./model/ModelUser":15,"./model/RequestCreateTransactionTemplate":16,"./model/RequestCreateTransactionTemplatePackageFormat":17,"./model/RequestRegisterUser":18,"./model/Webhook":19}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3634,6 +3642,10 @@ var ModelTransactionTemplate = /*#__PURE__*/function () {
           obj['buyerFees'] = _ApiClient["default"].convertToType(data['buyerFees'], 'Number');
         }
 
+        if (data.hasOwnProperty('shippingCosts')) {
+          obj['shippingCosts'] = _ApiClient["default"].convertToType(data['shippingCosts'], 'Number');
+        }
+
         if (data.hasOwnProperty('buyerTotal')) {
           obj['buyerTotal'] = _ApiClient["default"].convertToType(data['buyerTotal'], 'Number');
         }
@@ -3740,6 +3752,12 @@ ModelTransactionTemplate.prototype['flow'] = undefined;
  */
 
 ModelTransactionTemplate.prototype['buyerFees'] = undefined;
+/**
+ * The shipping costs, in cents.
+ * @member {Number} shippingCosts
+ */
+
+ModelTransactionTemplate.prototype['shippingCosts'] = undefined;
 /**
  * The buyer's total, in cents.
  * @member {Number} buyerTotal
@@ -3889,6 +3907,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _RequestCreateTransactionTemplatePackageFormat = _interopRequireDefault(require("./RequestCreateTransactionTemplatePackageFormat"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3969,6 +3989,18 @@ var RequestCreateTransactionTemplate = /*#__PURE__*/function () {
           obj['subTotal'] = _ApiClient["default"].convertToType(data['subTotal'], 'Number');
         }
 
+        if (data.hasOwnProperty('shippingCosts')) {
+          obj['shippingCosts'] = _ApiClient["default"].convertToType(data['shippingCosts'], 'Number');
+        }
+
+        if (data.hasOwnProperty('packageFormat')) {
+          obj['packageFormat'] = _RequestCreateTransactionTemplatePackageFormat["default"].constructFromObject(data['packageFormat']);
+        }
+
+        if (data.hasOwnProperty('shippingProviders')) {
+          obj['shippingProviders'] = _ApiClient["default"].convertToType(data['shippingProviders'], ['String']);
+        }
+
         if (data.hasOwnProperty('currency')) {
           obj['currency'] = _ApiClient["default"].convertToType(data['currency'], 'String');
         }
@@ -4046,6 +4078,23 @@ RequestCreateTransactionTemplate.prototype['sellerTripartieId'] = undefined;
 
 RequestCreateTransactionTemplate.prototype['subTotal'] = undefined;
 /**
+ * The shipping costs, in cents.<br />If provided, the Seller will have to handle shipping by himself. <code>packageFormat</code> and <code>shippingProviders</code> will be ignored, and automatic shipping costs calculation and shipping label generation will be disabled. 
+ * @member {Number} shippingCosts
+ */
+
+RequestCreateTransactionTemplate.prototype['shippingCosts'] = undefined;
+/**
+ * @member {module:model/RequestCreateTransactionTemplatePackageFormat} packageFormat
+ */
+
+RequestCreateTransactionTemplate.prototype['packageFormat'] = undefined;
+/**
+ * Allowed shipping providers.<br /><strong>Required for automatic shipping costs and shipping label generation.</strong>
+ * @member {Array.<module:model/RequestCreateTransactionTemplate.ShippingProvidersEnum>} shippingProviders
+ */
+
+RequestCreateTransactionTemplate.prototype['shippingProviders'] = undefined;
+/**
  * The currency code (ISO 4217).
  * @member {String} currency
  */
@@ -4098,6 +4147,61 @@ RequestCreateTransactionTemplate.prototype['allowDelivery'] = true;
 
 RequestCreateTransactionTemplate.prototype['picture'] = undefined;
 /**
+ * Allowed values for the <code>shippingProviders</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+RequestCreateTransactionTemplate['ShippingProvidersEnum'] = {
+  /**
+   * value: "colissimo"
+   * @const
+   */
+  "colissimo": "colissimo",
+
+  /**
+   * value: "tnt"
+   * @const
+   */
+  "tnt": "tnt",
+
+  /**
+   * value: "chronopost"
+   * @const
+   */
+  "chronopost": "chronopost",
+
+  /**
+   * value: "dpd"
+   * @const
+   */
+  "dpd": "dpd",
+
+  /**
+   * value: "ups"
+   * @const
+   */
+  "ups": "ups",
+
+  /**
+   * value: "dhl"
+   * @const
+   */
+  "dhl": "dhl",
+
+  /**
+   * value: "fedex"
+   * @const
+   */
+  "fedex": "fedex",
+
+  /**
+   * value: "swiss-post"
+   * @const
+   */
+  "swiss-post": "swiss-post"
+};
+/**
  * Allowed values for the <code>productCategory</code> property.
  * @enum {String}
  * @readonly
@@ -4148,7 +4252,115 @@ RequestCreateTransactionTemplate['ProductCategoryEnum'] = {
 };
 var _default = RequestCreateTransactionTemplate;
 exports["default"] = _default;
-},{"../ApiClient":8}],17:[function(require,module,exports){
+},{"../ApiClient":8,"./RequestCreateTransactionTemplatePackageFormat":17}],17:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _ApiClient = _interopRequireDefault(require("../ApiClient"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * The RequestCreateTransactionTemplatePackageFormat model module.
+ * @module model/RequestCreateTransactionTemplatePackageFormat
+ * @version 1.0
+ */
+var RequestCreateTransactionTemplatePackageFormat = /*#__PURE__*/function () {
+  /**
+   * Constructs a new <code>RequestCreateTransactionTemplatePackageFormat</code>.
+   * The package format&lt;br /&gt;&lt;strong&gt;Required for automatic shipping costs and shipping label generation.&lt;/strong&gt;
+   * @alias module:model/RequestCreateTransactionTemplatePackageFormat
+   */
+  function RequestCreateTransactionTemplatePackageFormat() {
+    _classCallCheck(this, RequestCreateTransactionTemplatePackageFormat);
+
+    RequestCreateTransactionTemplatePackageFormat.initialize(this);
+  }
+  /**
+   * Initializes the fields of this object.
+   * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+   * Only for internal use.
+   */
+
+
+  _createClass(RequestCreateTransactionTemplatePackageFormat, null, [{
+    key: "initialize",
+    value: function initialize(obj) {}
+    /**
+     * Constructs a <code>RequestCreateTransactionTemplatePackageFormat</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RequestCreateTransactionTemplatePackageFormat} obj Optional instance to populate.
+     * @return {module:model/RequestCreateTransactionTemplatePackageFormat} The populated <code>RequestCreateTransactionTemplatePackageFormat</code> instance.
+     */
+
+  }, {
+    key: "constructFromObject",
+    value: function constructFromObject(data, obj) {
+      if (data) {
+        obj = obj || new RequestCreateTransactionTemplatePackageFormat();
+
+        if (data.hasOwnProperty('weight')) {
+          obj['weight'] = _ApiClient["default"].convertToType(data['weight'], 'Number');
+        }
+
+        if (data.hasOwnProperty('length')) {
+          obj['length'] = _ApiClient["default"].convertToType(data['length'], 'Number');
+        }
+
+        if (data.hasOwnProperty('height')) {
+          obj['height'] = _ApiClient["default"].convertToType(data['height'], 'Number');
+        }
+
+        if (data.hasOwnProperty('width')) {
+          obj['width'] = _ApiClient["default"].convertToType(data['width'], 'Number');
+        }
+      }
+
+      return obj;
+    }
+  }]);
+
+  return RequestCreateTransactionTemplatePackageFormat;
+}();
+/**
+ * The package weight, in grams.
+ * @member {Number} weight
+ */
+
+
+RequestCreateTransactionTemplatePackageFormat.prototype['weight'] = undefined;
+/**
+ * The package length, in centimeters.
+ * @member {Number} length
+ */
+
+RequestCreateTransactionTemplatePackageFormat.prototype['length'] = undefined;
+/**
+ * The package height, in centimeters.
+ * @member {Number} height
+ */
+
+RequestCreateTransactionTemplatePackageFormat.prototype['height'] = undefined;
+/**
+ * The package width, in centimeters.
+ * @member {Number} width
+ */
+
+RequestCreateTransactionTemplatePackageFormat.prototype['width'] = undefined;
+var _default = RequestCreateTransactionTemplatePackageFormat;
+exports["default"] = _default;
+},{"../ApiClient":8}],18:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4248,7 +4460,7 @@ RequestRegisterUser.prototype['externalId'] = undefined;
 RequestRegisterUser.prototype['displayName'] = undefined;
 var _default = RequestRegisterUser;
 exports["default"] = _default;
-},{"../ApiClient":8}],18:[function(require,module,exports){
+},{"../ApiClient":8}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4422,7 +4634,7 @@ Webhook['EventTypeEnum'] = {
 };
 var _default = Webhook;
 exports["default"] = _default;
-},{"../ApiClient":8}],19:[function(require,module,exports){
+},{"../ApiClient":8}],20:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -4599,7 +4811,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 module.exports = stringify
 stringify.default = stringify
 stringify.stable = deterministicStringify
@@ -4762,7 +4974,7 @@ function replaceGetterValues (replacer) {
   }
 }
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 "use strict";
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -4805,7 +5017,7 @@ Agent.prototype._setDefaults = function (req) {
 
 module.exports = Agent;
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -5826,7 +6038,7 @@ request.put = function (url, data, fn) {
   return req;
 };
 
-},{"./agent-base":21,"./is-object":23,"./request-base":24,"./response-base":25,"component-emitter":19,"fast-safe-stringify":20}],23:[function(require,module,exports){
+},{"./agent-base":22,"./is-object":24,"./request-base":25,"./response-base":26,"component-emitter":20,"fast-safe-stringify":21}],24:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -5844,7 +6056,7 @@ function isObject(obj) {
 
 module.exports = isObject;
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -6602,7 +6814,7 @@ RequestBase.prototype._setTimeouts = function () {
   }
 };
 
-},{"./is-object":23}],25:[function(require,module,exports){
+},{"./is-object":24}],26:[function(require,module,exports){
 "use strict";
 
 /**
@@ -6734,7 +6946,7 @@ ResponseBase.prototype._setStatusProperties = function (status) {
   this.unprocessableEntity = status === 422;
 };
 
-},{"./utils":26}],26:[function(require,module,exports){
+},{"./utils":27}],27:[function(require,module,exports){
 "use strict";
 
 /**

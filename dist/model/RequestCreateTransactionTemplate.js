@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _RequestCreateTransactionTemplatePackageFormat = _interopRequireDefault(require("./RequestCreateTransactionTemplatePackageFormat"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -87,6 +89,18 @@ var RequestCreateTransactionTemplate = /*#__PURE__*/function () {
           obj['subTotal'] = _ApiClient["default"].convertToType(data['subTotal'], 'Number');
         }
 
+        if (data.hasOwnProperty('shippingCosts')) {
+          obj['shippingCosts'] = _ApiClient["default"].convertToType(data['shippingCosts'], 'Number');
+        }
+
+        if (data.hasOwnProperty('packageFormat')) {
+          obj['packageFormat'] = _RequestCreateTransactionTemplatePackageFormat["default"].constructFromObject(data['packageFormat']);
+        }
+
+        if (data.hasOwnProperty('shippingProviders')) {
+          obj['shippingProviders'] = _ApiClient["default"].convertToType(data['shippingProviders'], ['String']);
+        }
+
         if (data.hasOwnProperty('currency')) {
           obj['currency'] = _ApiClient["default"].convertToType(data['currency'], 'String');
         }
@@ -164,6 +178,23 @@ RequestCreateTransactionTemplate.prototype['sellerTripartieId'] = undefined;
 
 RequestCreateTransactionTemplate.prototype['subTotal'] = undefined;
 /**
+ * The shipping costs, in cents.<br />If provided, the Seller will have to handle shipping by himself. <code>packageFormat</code> and <code>shippingProviders</code> will be ignored, and automatic shipping costs calculation and shipping label generation will be disabled. 
+ * @member {Number} shippingCosts
+ */
+
+RequestCreateTransactionTemplate.prototype['shippingCosts'] = undefined;
+/**
+ * @member {module:model/RequestCreateTransactionTemplatePackageFormat} packageFormat
+ */
+
+RequestCreateTransactionTemplate.prototype['packageFormat'] = undefined;
+/**
+ * Allowed shipping providers.<br /><strong>Required for automatic shipping costs and shipping label generation.</strong>
+ * @member {Array.<module:model/RequestCreateTransactionTemplate.ShippingProvidersEnum>} shippingProviders
+ */
+
+RequestCreateTransactionTemplate.prototype['shippingProviders'] = undefined;
+/**
  * The currency code (ISO 4217).
  * @member {String} currency
  */
@@ -215,6 +246,61 @@ RequestCreateTransactionTemplate.prototype['allowDelivery'] = true;
  */
 
 RequestCreateTransactionTemplate.prototype['picture'] = undefined;
+/**
+ * Allowed values for the <code>shippingProviders</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+RequestCreateTransactionTemplate['ShippingProvidersEnum'] = {
+  /**
+   * value: "colissimo"
+   * @const
+   */
+  "colissimo": "colissimo",
+
+  /**
+   * value: "tnt"
+   * @const
+   */
+  "tnt": "tnt",
+
+  /**
+   * value: "chronopost"
+   * @const
+   */
+  "chronopost": "chronopost",
+
+  /**
+   * value: "dpd"
+   * @const
+   */
+  "dpd": "dpd",
+
+  /**
+   * value: "ups"
+   * @const
+   */
+  "ups": "ups",
+
+  /**
+   * value: "dhl"
+   * @const
+   */
+  "dhl": "dhl",
+
+  /**
+   * value: "fedex"
+   * @const
+   */
+  "fedex": "fedex",
+
+  /**
+   * value: "swiss-post"
+   * @const
+   */
+  "swiss-post": "swiss-post"
+};
 /**
  * Allowed values for the <code>productCategory</code> property.
  * @enum {String}

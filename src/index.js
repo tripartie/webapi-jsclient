@@ -16,6 +16,7 @@ import Error from './model/Error';
 import ModelTransactionTemplate from './model/ModelTransactionTemplate';
 import ModelUser from './model/ModelUser';
 import RequestCreateTransactionTemplate from './model/RequestCreateTransactionTemplate';
+import RequestCreateTransactionTemplatePackageFormat from './model/RequestCreateTransactionTemplatePackageFormat';
 import RequestRegisterUser from './model/RequestRegisterUser';
 import Webhook from './model/Webhook';
 import TransactionTemplatesApi from './api/TransactionTemplatesApi';
@@ -84,6 +85,12 @@ export {
      * @property {module:model/RequestCreateTransactionTemplate}
      */
     RequestCreateTransactionTemplate,
+
+    /**
+     * The RequestCreateTransactionTemplatePackageFormat model constructor.
+     * @property {module:model/RequestCreateTransactionTemplatePackageFormat}
+     */
+    RequestCreateTransactionTemplatePackageFormat,
 
     /**
      * The RequestRegisterUser model constructor.

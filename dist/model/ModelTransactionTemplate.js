@@ -98,6 +98,10 @@ var ModelTransactionTemplate = /*#__PURE__*/function () {
           obj['buyerFees'] = _ApiClient["default"].convertToType(data['buyerFees'], 'Number');
         }
 
+        if (data.hasOwnProperty('shippingCosts')) {
+          obj['shippingCosts'] = _ApiClient["default"].convertToType(data['shippingCosts'], 'Number');
+        }
+
         if (data.hasOwnProperty('buyerTotal')) {
           obj['buyerTotal'] = _ApiClient["default"].convertToType(data['buyerTotal'], 'Number');
         }
@@ -204,6 +208,12 @@ ModelTransactionTemplate.prototype['flow'] = undefined;
  */
 
 ModelTransactionTemplate.prototype['buyerFees'] = undefined;
+/**
+ * The shipping costs, in cents.
+ * @member {Number} shippingCosts
+ */
+
+ModelTransactionTemplate.prototype['shippingCosts'] = undefined;
 /**
  * The buyer's total, in cents.
  * @member {Number} buyerTotal

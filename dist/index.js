@@ -33,6 +33,12 @@ Object.defineProperty(exports, "RequestCreateTransactionTemplate", {
     return _RequestCreateTransactionTemplate["default"];
   }
 });
+Object.defineProperty(exports, "RequestCreateTransactionTemplatePackageFormat", {
+  enumerable: true,
+  get: function get() {
+    return _RequestCreateTransactionTemplatePackageFormat["default"];
+  }
+});
 Object.defineProperty(exports, "RequestRegisterUser", {
   enumerable: true,
   get: function get() {
@@ -73,6 +79,8 @@ var _ModelTransactionTemplate = _interopRequireDefault(require("./model/ModelTra
 var _ModelUser = _interopRequireDefault(require("./model/ModelUser"));
 
 var _RequestCreateTransactionTemplate = _interopRequireDefault(require("./model/RequestCreateTransactionTemplate"));
+
+var _RequestCreateTransactionTemplatePackageFormat = _interopRequireDefault(require("./model/RequestCreateTransactionTemplatePackageFormat"));
 
 var _RequestRegisterUser = _interopRequireDefault(require("./model/RequestRegisterUser"));
 

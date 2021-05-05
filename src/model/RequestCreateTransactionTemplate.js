@@ -11,6 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import RequestCreateTransactionTemplatePackageFormat from './RequestCreateTransactionTemplatePackageFormat';
 
 /**
  * The RequestCreateTransactionTemplate model module.
@@ -71,6 +72,15 @@ class RequestCreateTransactionTemplate {
             }
             if (data.hasOwnProperty('subTotal')) {
                 obj['subTotal'] = ApiClient.convertToType(data['subTotal'], 'Number');
+            }
+            if (data.hasOwnProperty('shippingCosts')) {
+                obj['shippingCosts'] = ApiClient.convertToType(data['shippingCosts'], 'Number');
+            }
+            if (data.hasOwnProperty('packageFormat')) {
+                obj['packageFormat'] = RequestCreateTransactionTemplatePackageFormat.constructFromObject(data['packageFormat']);
+            }
+            if (data.hasOwnProperty('shippingProviders')) {
+                obj['shippingProviders'] = ApiClient.convertToType(data['shippingProviders'], ['String']);
             }
             if (data.hasOwnProperty('currency')) {
                 obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
@@ -140,6 +150,23 @@ RequestCreateTransactionTemplate.prototype['sellerTripartieId'] = undefined;
 RequestCreateTransactionTemplate.prototype['subTotal'] = undefined;
 
 /**
+ * The shipping costs, in cents.<br />If provided, the Seller will have to handle shipping by himself. <code>packageFormat</code> and <code>shippingProviders</code> will be ignored, and automatic shipping costs calculation and shipping label generation will be disabled. 
+ * @member {Number} shippingCosts
+ */
+RequestCreateTransactionTemplate.prototype['shippingCosts'] = undefined;
+
+/**
+ * @member {module:model/RequestCreateTransactionTemplatePackageFormat} packageFormat
+ */
+RequestCreateTransactionTemplate.prototype['packageFormat'] = undefined;
+
+/**
+ * Allowed shipping providers.<br /><strong>Required for automatic shipping costs and shipping label generation.</strong>
+ * @member {Array.<module:model/RequestCreateTransactionTemplate.ShippingProvidersEnum>} shippingProviders
+ */
+RequestCreateTransactionTemplate.prototype['shippingProviders'] = undefined;
+
+/**
  * The currency code (ISO 4217).
  * @member {String} currency
  */
@@ -193,6 +220,63 @@ RequestCreateTransactionTemplate.prototype['picture'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>shippingProviders</code> property.
+ * @enum {String}
+ * @readonly
+ */
+RequestCreateTransactionTemplate['ShippingProvidersEnum'] = {
+
+    /**
+     * value: "colissimo"
+     * @const
+     */
+    "colissimo": "colissimo",
+
+    /**
+     * value: "tnt"
+     * @const
+     */
+    "tnt": "tnt",
+
+    /**
+     * value: "chronopost"
+     * @const
+     */
+    "chronopost": "chronopost",
+
+    /**
+     * value: "dpd"
+     * @const
+     */
+    "dpd": "dpd",
+
+    /**
+     * value: "ups"
+     * @const
+     */
+    "ups": "ups",
+
+    /**
+     * value: "dhl"
+     * @const
+     */
+    "dhl": "dhl",
+
+    /**
+     * value: "fedex"
+     * @const
+     */
+    "fedex": "fedex",
+
+    /**
+     * value: "swiss-post"
+     * @const
+     */
+    "swiss-post": "swiss-post"
+};
 
 
 /**

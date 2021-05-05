@@ -15,6 +15,7 @@ Name | Type | Description
 **currency** | **String** | The currency code (ISO 4217).
 **flow** | **String** | The flow.
 **buyerFees** | **Number** | The buyer&#39;s fees, in cents.
+**shippingCosts** | **Number** | The shipping costs, in cents.
 **buyerTotal** | **Number** | The buyer&#39;s total, in cents.
 **sellerFees** | **Number** | The seller&#39;s fees, in cents.
 **sellerTotal** | **Number** | The seller&#39;s total, in cents.

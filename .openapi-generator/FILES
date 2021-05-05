@@ -6,6 +6,7 @@ docs/Error.md
 docs/ModelTransactionTemplate.md
 docs/ModelUser.md
 docs/RequestCreateTransactionTemplate.md
+docs/RequestCreateTransactionTemplatePackageFormat.md
 docs/RequestRegisterUser.md
 docs/TransactionTemplatesApi.md
 docs/UsersApi.md
@@ -23,6 +24,7 @@ src/model/Error.js
 src/model/ModelTransactionTemplate.js
 src/model/ModelUser.js
 src/model/RequestCreateTransactionTemplate.js
+src/model/RequestCreateTransactionTemplatePackageFormat.js
 src/model/RequestRegisterUser.js
 src/model/Webhook.js
-test/model/Webhook.spec.js
+test/model/RequestCreateTransactionTemplatePackageFormat.spec.js

@@ -79,6 +79,9 @@ class ModelTransactionTemplate {
             if (data.hasOwnProperty('buyerFees')) {
                 obj['buyerFees'] = ApiClient.convertToType(data['buyerFees'], 'Number');
             }
+            if (data.hasOwnProperty('shippingCosts')) {
+                obj['shippingCosts'] = ApiClient.convertToType(data['shippingCosts'], 'Number');
+            }
             if (data.hasOwnProperty('buyerTotal')) {
                 obj['buyerTotal'] = ApiClient.convertToType(data['buyerTotal'], 'Number');
             }
@@ -175,6 +178,12 @@ ModelTransactionTemplate.prototype['flow'] = undefined;
  * @member {Number} buyerFees
  */
 ModelTransactionTemplate.prototype['buyerFees'] = undefined;
+
+/**
+ * The shipping costs, in cents.
+ * @member {Number} shippingCosts
+ */
+ModelTransactionTemplate.prototype['shippingCosts'] = undefined;
 
 /**
  * The buyer's total, in cents.
